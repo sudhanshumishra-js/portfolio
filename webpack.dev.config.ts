@@ -5,6 +5,8 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import ESLintPlugin from "eslint-webpack-plugin";
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+
 
 interface Configuration extends WebpackConfiguration {
   devServer?: WebpackDevServerConfiguration;
@@ -97,6 +99,11 @@ const config: Configuration = {
       'process.env': {
         'REACT_APP_GITHUB_ACCESS_TOKEN': JSON.stringify(process.env.REACT_APP_GITHUB_ACCESS_TOKEN),
       },
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: 'public', to: 'dist' }, // Copies all files from 'public' to 'dist'
+      ],
     }),
   ],
   devtool: "inline-source-map",
