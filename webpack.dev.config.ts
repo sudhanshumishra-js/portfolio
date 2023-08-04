@@ -1,5 +1,5 @@
 import path from "path";
-import { Configuration as WebpackConfiguration, HotModuleReplacementPlugin } from "webpack";
+import { Configuration as WebpackConfiguration, HotModuleReplacementPlugin, DefinePlugin } from "webpack";
 import { Configuration as WebpackDevServerConfiguration } from 'webpack-dev-server';
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
@@ -43,7 +43,37 @@ const config: Configuration = {
           "css-loader",
           "sass-loader",
         ]
-      }
+      },
+      {
+        test: /\.svg$/,
+        issuer: /\.[jt]sx?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[hash].[ext]',
+              outputPath: 'images/',
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg|otf)(\?v=\d+\.\d+\.\d+)?$/,
+        issuer: { not: [/\.[jt]sx?$/] },
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/',
+            },
+          },
+        ],
+      },
     ],
   },
   resolve: {
@@ -62,6 +92,11 @@ const config: Configuration = {
     }),
     new MiniCssExtractPlugin({
       filename: "[name].css",
+    }),
+    new DefinePlugin({
+      'process.env': {
+        'REACT_APP_GITHUB_ACCESS_TOKEN': JSON.stringify(process.env.REACT_APP_GITHUB_ACCESS_TOKEN),
+      },
     }),
   ],
   devtool: "inline-source-map",
