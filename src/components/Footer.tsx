@@ -10,10 +10,12 @@ const Footer: React.FC = () => {
   return (
     <footer>
       <div>
-        <span>Last Edited: July 2023 &copy;</span>
+        <span style={{ fontFamily: "Raleway" }}>
+          Last Edited: July 2023 &copy;
+        </span>
       </div>
       <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
-        <span>Sudhanshu Mishra</span>
+        <span style={{ fontFamily: "Raleway" }}>Sudhanshu Mishra</span>
         <a href="mailto:smishra007123@gmail.com">
           <img src={gmailIcon} className="social-icon" />
         </a>
@@ -24,7 +26,11 @@ const Footer: React.FC = () => {
         >
           <img src={linkedInIcon} className="social-icon" />
         </a>
-        <a href="https://github.com/donOO7" target="_blank" rel="noreferrer">
+        <a
+          href="https://github.com/sudhanshumishra-js"
+          target="_blank"
+          rel="noreferrer"
+        >
           <img src={githubIcon} className="social-icon" />
         </a>
         <a

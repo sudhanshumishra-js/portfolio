@@ -3,7 +3,7 @@ import { useStyles } from "./About.styles";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import SportsCricketIcon from "@mui/icons-material/SportsCricket";
 import VideogameAssetIcon from "@mui/icons-material/VideogameAsset";
-import AutoStoriesIcon from "@mui/icons-material/AutoStories";
+// import AutoStoriesIcon from "@mui/icons-material/AutoStories";
 import SportsSoccerIcon from "@mui/icons-material/SportsSoccer";
 import Tooltip, { TooltipProps } from "@mui/material/Tooltip";
 import styled from "@emotion/styled";
@@ -143,7 +143,7 @@ const About: React.FC = () => {
               <span className={classes.hobbyRowKeySpan}>online games</span>
             </div>
             <span className={classes.productRowValueSpan}>
-              Valorant/CS GO (noob) Battlegrounds mobile{" "}
+              FPS PC games, Battlegrounds mobile{" "}
               <StyledTooltip
                 placement="top"
                 title={"Some fav games: GTA series, NFS series, PUBG mobile"}
@@ -158,8 +158,8 @@ const About: React.FC = () => {
             <div>
               <span className={classes.hobbyRowKeySpan}>Books</span>
             </div>
-            <span className={classes.productRowValueSpan}>
-              Exploring...
+            {/* <span className={classes.productRowValueSpan}>
+              Exploring
               <StyledTooltip
                 placement="top"
                 title={
@@ -167,8 +167,15 @@ const About: React.FC = () => {
                 }
               >
                 <AutoStoriesIcon sx={{ color: "black", cursor: "pointer" }} />
-              </StyledTooltip>{" "}
-            </span>
+              </StyledTooltip>
+            </span> */}
+          </div>
+          <div className={classes.hobbyRowDiv}>
+            <div>
+              <span className={classes.hobbyRowKeySpan}>
+                Writing stories / rap music
+              </span>
+            </div>
           </div>
         </div>
         <div className={classes.noteDiv}>

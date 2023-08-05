@@ -7,7 +7,7 @@ export const useStyles = makeStyles({
         marginTop:'20px'
     },
     btnContacts:{
-        minWidth:'120px',
+        minWidth:'150px',
         maxWidth:'200px',
         padding:'8px 20px',
         borderRadius:'5px',

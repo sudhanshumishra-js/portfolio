@@ -101,7 +101,7 @@ export const useStyles = makeStyles({
             
         },
         '@media(max-width:786px)':{
-            fontSize:'2.5rem',
+            fontSize:'2rem',
             lineHeight:'100%'            
         },
     },

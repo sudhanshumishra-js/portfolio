@@ -23,10 +23,9 @@ export const useStyles = makeStyles({
     productRowDiv:{
         display:'grid',
         maxWidth:'100vw',
-        gridTemplateColumns:'30% 50%',
+        gridTemplateColumns:'30% 70%',
         '@media(max-width:786px)':{
             margin:'auto',
-            width:'95%', 
         },
         '@media(max-width:500px)':{
             gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
@@ -42,7 +41,8 @@ export const useStyles = makeStyles({
         fontFamily:'Raleway',
         display:'flex',
         alignItems:'center',
-        gap:'10px'
+        gap:'10px',
+
     },
     interestsDivContainer:{
         display:'flex'
@@ -53,7 +53,6 @@ export const useStyles = makeStyles({
         gridTemplateColumns:'30% 50%',
         '@media(max-width:786px)':{
             margin:'auto',
-            width:'95%', 
         },
         '@media(max-width:500px)':{
             gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
@@ -68,7 +67,12 @@ export const useStyles = makeStyles({
     noteDiv:{
         marginTop:'100px',
         marginBottom:'10px',
-        fontFamily:'Rem'
+        fontFamily:'Rem',
+        '@media(max-width:786px)':{
+        textAlign:'center',
+        width:'100%'
+        },
+   
     }
 
 })

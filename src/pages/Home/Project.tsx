@@ -47,7 +47,7 @@ const Project = () => {
         </h1>
 
         <div className="center" style={{ marginBottom: "20px" }}>
-          <GitHubCalendar username="donoo7" colorScheme="light" />
+          <GitHubCalendar username="sudhanshumishra-js" colorScheme="light" />
         </div>
 
         <h2 className="subheading" style={{ marginTop: "40px" }}>
@@ -165,13 +165,13 @@ const Project = () => {
           className="btn-primary"
           onClick={() =>
             window.open(
-              "https://github.com/donOO7?tab=repositories",
+              "https://github.com/sudhanshumishra-js?tab=repositories",
               "_blank",
               "nooperner,noreferrer"
             )
           }
         >
-          View of Github
+          View on Github
         </button>
       </div>
     </>
