@@ -102,9 +102,9 @@ const config: Configuration = {
     }),
     new CopyPlugin({
       patterns: [
-        { from: 'public', to: 'dist' }, // Copies all files from 'public' to 'dist'
+         { from: 'public/favicon.ico', to: 'favicon.ico' },
       ],
-    }),
+   }),
   ],
   devtool: "inline-source-map",
   devServer: {
