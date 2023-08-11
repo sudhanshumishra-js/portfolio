@@ -133,21 +133,35 @@ const Project = () => {
         </h2>
         <div className="cards-grid">
           <Card
-            heading="Sample Project"
-            description={
-              "This is a sample project which does these x and y things. This was made using these technologies."
-            }
-            githubLink={"https://www.google.com"}
-            deployedLink={"https://www.google.com"}
-          />
-          <Card
             heading="Portfolio"
             description={
               "React app illustrating my journey and growth in software development. This portfolio not only showcases my various projects, but also provides an insight into who I am as a person, highlighting my personal interests and passions alongside my technical skills"
             }
             techStack={["ReactJs", "NodeJs"]}
+            githubLink={"https://github.com/sudhanshumishra-js/portfolio"}
+            deployedLink={"https://sudhanshumishra.netlify.app/"}
           />
-          <Card heading="Portfolio" />
+          <Card
+            heading="Stack Digest"
+            description={
+              "Stackdigest is a webapp to implement quora like features for stackoverflow which will help in growth of user's knowledge. It constructs a feed which has commonly asked/trending questions on stackoverflow. Through this user can get through most common problems of computer programming and avoid them which would save user's time too. "
+            }
+            techStack={["HTML", "CSS", "Sprringboot", "MySQL"]}
+            githubLink={"https://github.com/sudhanshumishra-js/stackdigest"}
+            deployedLink={"https://stackdigest.herokuapp.com/"}
+          />
+
+          <Card
+            heading="Crypto Price Tracker React"
+            description={
+              "A react app which fetches current crypto prices from CoinGecko API and having a dynamic search option."
+            }
+            githubLink={
+              "https://github.com/sudhanshumishra-js/CryptoPriceTracker-React"
+            }
+            deployedLink={"https://crypto-price-checker-react.vercel.app/"}
+            techStack={["React", "MUI"]}
+          />
         </div>
         {/* <h2 className="subheading" style={{ marginTop: "15vh" }}>
             Complete projects overview (Fteched from GitHub)

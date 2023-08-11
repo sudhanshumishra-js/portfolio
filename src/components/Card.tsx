@@ -34,7 +34,9 @@ const Card = (props: CardProps) => {
           }}
           className="icons"
           onClick={() =>
-            props.githubLink ? window.open(props.githubLink, "_blank") : null
+            props.deployedLink
+              ? window.open(props.deployedLink, "_blank")
+              : null
           }
         />
       </div>

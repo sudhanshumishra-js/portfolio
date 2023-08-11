@@ -177,7 +177,12 @@ const Home: React.FC = () => {
                   setResumeImageProps({ xys: calc(x, y) })
                 }
                 onMouseLeave={() => setResumeImageProps({ xys: [0, 0, 1] })}
-                onClick={() => window.open("https://www.google.com", "_blank")}
+                onClick={() =>
+                  window.open(
+                    "https://drive.google.com/file/d/1G-bJ6OhLne3xAZvxYx0wa6hNdZxdwJyy/view?usp=sharing",
+                    "_blank"
+                  )
+                }
                 style={{ transform: resumeImageProps.xys.interpolate(trans) }}
               />
             </div>
