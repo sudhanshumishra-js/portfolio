@@ -78,7 +78,7 @@ const Project = () => {
             >
               <h3 className="vertical-timeline-element-title">Solis.Io</h3>
               <h4 className="vertical-timeline-element-subtitle">
-                Software Consultant
+                Software Developer
               </h4>
               <p>Full Time (Remote) </p>
             </VerticalTimelineElement>
@@ -98,7 +98,7 @@ const Project = () => {
             >
               <h3 className="vertical-timeline-element-title">Solis.Io</h3>
               <h4 className="vertical-timeline-element-subtitle">
-                Software Consultant Intern
+                Software Development Intern
               </h4>
               <p>Internship (Remote)</p>
             </VerticalTimelineElement>

@@ -110,7 +110,7 @@ const Home: React.FC = () => {
                       >
                         <span className="no-break">&nbsp;full stack&nbsp;</span>
                       </RoughNotation>
-                      developer consultant at a web3 startup building&nbsp;
+                      developer at a web3 startup building&nbsp;
                       <a
                         href="https://www.solis.market"
                         target="_blank"
