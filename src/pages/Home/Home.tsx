@@ -179,7 +179,7 @@ const Home: React.FC = () => {
                 onMouseLeave={() => setResumeImageProps({ xys: [0, 0, 1] })}
                 onClick={() =>
                   window.open(
-                    "https://drive.google.com/file/d/1G-bJ6OhLne3xAZvxYx0wa6hNdZxdwJyy/view?usp=sharing",
+                    "https://drive.google.com/file/d/11TZANMnBPE2wBM-rSdfpSA4NKnz6FjJN/view?usp=sharing",
                     "_blank"
                   )
                 }
