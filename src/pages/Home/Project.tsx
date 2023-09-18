@@ -133,6 +133,17 @@ const Project = () => {
         </h2>
         <div className="cards-grid">
           <Card
+            heading="Raffle"
+            description={
+              "An app, developed in Next.js, uses Chainlink Keeper and Chainlink VRF to automate and select winners for a raffle."
+            }
+            techStack={["NextJs", "Solidity, TailwindCSS"]}
+            githubLink={
+              "https://github.com/sudhanshumishra-js/lottery-frontend"
+            }
+            deployedLink={"https://smart-contract-raffle.vercel.app/"}
+          />
+          <Card
             heading="Portfolio"
             description={
               "React app illustrating my journey and growth in software development. This portfolio not only showcases my various projects, but also provides an insight into who I am as a person, highlighting my personal interests and passions alongside my technical skills"

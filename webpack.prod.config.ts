@@ -1,12 +1,15 @@
 import path from "path";
-import { Configuration as WebpackConfiguration, HotModuleReplacementPlugin, DefinePlugin } from "webpack";
-import { Configuration as WebpackDevServerConfiguration } from 'webpack-dev-server';
+import {
+  Configuration as WebpackConfiguration,
+  HotModuleReplacementPlugin,
+  DefinePlugin,
+} from "webpack";
+import { Configuration as WebpackDevServerConfiguration } from "webpack-dev-server";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import ESLintPlugin from "eslint-webpack-plugin";
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
-
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 interface Configuration extends WebpackConfiguration {
   devServer?: WebpackDevServerConfiguration;
@@ -36,42 +39,38 @@ const config: Configuration = {
       },
       {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [
-          MiniCssExtractPlugin.loader,
-          "css-loader",
-          "sass-loader",
-        ]
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
       {
         test: /\.svg$/,
         issuer: /\.[jt]sx?$/,
         use: [
           {
-            loader: 'file-loader',
+            loader: "file-loader",
             options: {
-              name: '[name].[hash].[ext]',
-              outputPath: 'images/',
+              name: "[name].[hash].[ext]",
+              outputPath: "images/",
             },
           },
         ],
       },
       {
         test: /\.(png|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
+        type: "asset/resource",
       },
       {
         test: /\.(woff(2)?|ttf|eot|svg|otf)(\?v=\d+\.\d+\.\d+)?$/,
         issuer: { not: [/\.[jt]sx?$/] },
         use: [
           {
-            loader: 'file-loader',
+            loader: "file-loader",
             options: {
-              name: '[name].[ext]',
-              outputPath: 'fonts/',
+              name: "[name].[ext]",
+              outputPath: "fonts/",
             },
           },
         ],
@@ -96,14 +95,14 @@ const config: Configuration = {
       filename: "[name].css",
     }),
     new DefinePlugin({
-      'process.env': {
-        'REACT_APP_GITHUB_ACCESS_TOKEN': JSON.stringify(process.env.REACT_APP_GITHUB_ACCESS_TOKEN),
+      "process.env": {
+        REACT_APP_GITHUB_ACCESS_TOKEN: JSON.stringify(
+          process.env.REACT_APP_GITHUB_ACCESS_TOKEN
+        ),
       },
     }),
     new CopyPlugin({
-      patterns: [
-        { from: 'public', to: 'dist' }, 
-      ],
+      patterns: [{ from: "public", to: "dist" }],
     }),
   ],
   devtool: "inline-source-map",
