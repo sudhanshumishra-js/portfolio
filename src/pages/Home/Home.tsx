@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect, useState } from "react";
 import { useStyles } from "./Home.styles";
 import profilePhoto from "../../assets/Images/profilePhoto.jpg";
 import resumeImage from "../../assets/Images/resumeImage.png";
@@ -6,6 +6,8 @@ import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 import { useSpring, animated, config } from "react-spring";
 
 const Home: React.FC = () => {
+  const [showNotation, setShowNotation] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
   const calc = (x: number, y: number) => [
     -(y - window.innerHeight / 2) / 20,
     (x - window.innerWidth / 2) / 20,
@@ -20,6 +22,12 @@ const Home: React.FC = () => {
   }));
 
   const classes = useStyles();
+
+  useLayoutEffect(() => {
+    if (imageLoaded) {
+      setShowNotation(true);
+    }
+  }, [imageLoaded]);
   return (
     <>
       <div className={classes.homeContainer}>
@@ -47,7 +55,7 @@ const Home: React.FC = () => {
                     animationDuration={800}
                     type="highlight"
                     color="#FF4E17"
-                    show={true}
+                    show={showNotation}
                   >
                     Portfolio-V2
                   </RoughNotation>
@@ -65,7 +73,7 @@ const Home: React.FC = () => {
                     animationDuration={800}
                     type="box"
                     color="#FF4E17"
-                    show={true}
+                    show={showNotation}
                   >
                     Software Engineer/Developer
                   </RoughNotation>
@@ -85,17 +93,36 @@ const Home: React.FC = () => {
                 I architect build and optimize web experiences
               </h1>
               <div>
-                <img src={profilePhoto} className={classes.imageCicularDiv} />
+                {imageLoaded ? (
+                  <img src={profilePhoto} className={classes.imageCicularDiv} />
+                ) : (
+                  <div
+                    className={classes.imageLoadingDiv}
+                    style={{
+                      height: "100%",
+                      width: "100%",
+                      textAlign: "center",
+                    }}
+                  >
+                    Loading...
+                  </div>
+                )}
+                <img
+                  src={profilePhoto}
+                  style={{ display: "none" }}
+                  onLoad={() => setImageLoaded(true)}
+                />
               </div>
+
               <div className={classes.description}>
-                <RoughNotationGroup show={true}>
+                <RoughNotationGroup show={showNotation}>
                   <RoughNotation
                     animate={true}
                     animationDelay={5}
                     animationDuration={800}
                     type="bracket"
                     color="#FF4E17"
-                    show={true}
+                    show={showNotation}
                     brackets={["left", "right"]}
                   >
                     <article className="text">
@@ -106,7 +133,7 @@ const Home: React.FC = () => {
                         animationDuration={800}
                         type="highlight"
                         color="pink"
-                        show={true}
+                        show={showNotation}
                       >
                         <span className="no-break">&nbsp;full stack&nbsp;</span>
                       </RoughNotation>
@@ -128,7 +155,7 @@ const Home: React.FC = () => {
                         animationDuration={800}
                         type="box"
                         color="orange"
-                        show={true}
+                        show={showNotation}
                       >
                         <span className="no-break">
                           &nbsp;user interfaces&nbsp;
@@ -142,7 +169,7 @@ const Home: React.FC = () => {
                         animationDuration={800}
                         type="highlight"
                         color="yellow"
-                        show={true}
+                        show={showNotation}
                       >
                         <span className="no-break">
                           {" "}
@@ -150,11 +177,14 @@ const Home: React.FC = () => {
                         </span>
                       </RoughNotation>
                       <br />
-                      <br />I am proficient in an array of technologies
-                      including React, Node.js, MySQL, and Solidity. With a
-                      solid grounding in HTML5, CSS, and modern JavaScript, I am
-                      equipped to tackle challenges and build efficient,
-                      scalable solutions
+                      <br />
+                      I have a strong foundation in JavaScript and TypeScript,
+                      and have garnered experience working with JavaScript
+                      frameworks like React, Next.js, and Node.js. My blockchain
+                      knowledge is complemented by my experience in writing
+                      Solidity contracts. Additionally, I have experience
+                      integrating blockchain functionality with frontend using
+                      ethers.js.
                       <br />
                       <br />
                       <br />
