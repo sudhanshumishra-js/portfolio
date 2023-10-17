@@ -11,6 +11,7 @@ export const useStyles = makeStyles({
     minHeight: "100vh",
     maxHeight: "200vh",
   },
+
   introSlide: {
     backgroundColor: "black",
     color: "white",
@@ -33,7 +34,7 @@ export const useStyles = makeStyles({
     },
   },
   aboutSlide: {
-    backgroundColor: "white",
+    background: "white",
     color: "black",
     minHeight: "120vh",
     width: "100%",
@@ -57,7 +58,8 @@ export const useStyles = makeStyles({
     },
   },
   contactSlide: {
-    backgroundColor: "#E6EAEE",
+    background:
+      "radial-gradient(at right top, rgb(254, 215, 170), rgb(219, 234, 254), rgb(252, 231, 243))",
     color: "black",
     minHeight: "100vh",
     width: "100%",
