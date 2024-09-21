@@ -135,15 +135,15 @@ const Home: React.FC = () => {
                         color="pink"
                         show={showNotation}
                       >
-                        <span className="no-break">&nbsp;full stack&nbsp;</span>
+                        <span className="no-break">&nbsp;Software Engineer&nbsp;</span>
                       </RoughNotation>
-                      developer at a web3 startup building&nbsp;
+                       &nbsp; at &nbsp;
                       <a
-                        href="https://www.solis.market"
+                        href="https://www.xalts.io"
                         target="_blank"
                         rel="noreferrer"
                       >
-                        NFT marketplace
+                      Xalts
                       </a>
                       <br />
                       <br />I bring a strong foundation in both front-end and
@@ -209,7 +209,7 @@ const Home: React.FC = () => {
                 onMouseLeave={() => setResumeImageProps({ xys: [0, 0, 1] })}
                 onClick={() =>
                   window.open(
-                    "https://drive.google.com/file/d/11TZANMnBPE2wBM-rSdfpSA4NKnz6FjJN/view?usp=sharing",
+                    "https://drive.google.com/file/d/1kc_3oe4tycVp2diklG1UugTw898kb-hc/view?usp=sharing",
                     "_blank"
                   )
                 }
